@@ -161,15 +161,17 @@ function updateStack() {
 // ===============================
 
 upBtn.addEventListener("click", () => {
-  if (stack.lastElementChild) {
-    stack.insertBefore(stack.lastElementChild, stack.firstElementChild);
+  let lastChild = stack.lastElementChild;
+  if (lastChild) {
+    stack.insertBefore(lastChild, stack.firstElementChild );
     updateStack();
   }
 });
 
 downBtn.addEventListener("click", () => {
-  if (stack.firstElementChild) {
-    stack.appendChild(stack.firstElementChild);
+  const firstChild = stack.firstElementChild;
+  if (firstChild) {
+    stack.appendChild(firstChild);
     updateStack();
   }
 });
